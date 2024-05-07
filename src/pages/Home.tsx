@@ -1,12 +1,10 @@
 import HeroBanner from "@/components/banner/HeroBanner";
-import { Button } from "@/components/ui/button";
-
+import SupplyCardHome from "@/components/imagecard/SupplyCardHome";
 const Home = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto overflow-hidden">
       <HeroBanner />
-      <h1 className="text-3xl font-bold underline">Dister relif home</h1>
-      <Button>hello</Button>
+      <SupplyCardHome />
     </div>
   );
 };

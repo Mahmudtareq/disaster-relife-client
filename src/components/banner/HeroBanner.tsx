@@ -12,7 +12,7 @@ import bgImage2 from "../../assets/bg-3.webp";
 
 const HeroBanner = () => {
   return (
-    <div className="container my-5">
+    <div className="container mx-auto my-5">
       <Carousel
         opts={{
           align: "start",

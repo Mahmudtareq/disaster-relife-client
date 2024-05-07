@@ -1,8 +1,12 @@
 import App from "@/App";
 import DashBoardLayout from "@/components/layouts/DashBoardLayout";
 import About from "@/pages/About";
+import AllSupplyProducts from "@/pages/AllSupplyProducts";
+import CardDetailsPage from "@/pages/CardDetailsPage";
 import DashboardHome from "@/pages/DashboardHome";
 import Home from "@/pages/Home";
+import LoginPage from "@/pages/LoginPage";
+import RegisterPage from "@/pages/RegisterPage";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -12,6 +16,10 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> }, //index:true when hit / it's got to this page
       { path: "about", element: <About /> },
+      { path: "details/:id", element: <CardDetailsPage /> },
+      { path: "supplies", element: <AllSupplyProducts /> },
+      { path: "login", element: <LoginPage /> },
+      { path: "register", element: <RegisterPage/> },
     ],
   },
   {

@@ -1,5 +1,6 @@
 import { Facebook, GitBranch, Linkedin, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "../../assets/charity-logo.png";
 
 const Footer = () => {
   return (
@@ -8,93 +9,105 @@ const Footer = () => {
         <div className="container rounded shadow-xl text-black mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="grid grid-cols-12">
             <div className="lg:col-span-4 col-span-12 mb-3 lg:mb-0">
-              <Link to="#" className="flex items-center">
+              <Link to="/" className="flex items-center">
                 <img
-                  src="https://flowbite.com/docs/images/logo.svg"
-                  className="h-8 me-3"
-                  alt="FlowBite Logo"
+                  src={logo}
+                  className="h-10 me-3"
+                  alt="Distaste help Logo"
                 />
-                <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                  Global  Medical Supply
+                <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+                  Medical Supply
                 </span>
               </Link>
             </div>
             {/* <div className="col-span-8"> */}
             <div className="lg:col-span-2 col-span-6 mt-5 lg:mt-0">
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Resources
+              <h2 className="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white">
+                Information
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="https://flowbite.com/" className="hover:underline">
-                    Flowbite
-                  </a>
+                  <Link to="#" className="hover:underline">
+                    Search Terms
+                  </Link>
                 </li>
-                <li>
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline"
-                  >
-                    Tailwind CSS
-                  </a>
+                <li className="mb-4">
+                  <Link to="#" className="hover:underline">
+                    Advanced Search
+                  </Link>
                 </li>
               </ul>
             </div>
             <div className="lg:col-span-2 col-span-6 mt-5 lg:mt-0">
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white">
                 Follow us
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a
-                    href="https://github.com/themesberg/flowbite"
-                    className="hover:underline "
-                  >
-                    Github
-                  </a>
+                  <Link to="#" className="hover:underline ">
+                    Youtube
+                  </Link>
                 </li>
-                <li>
-                  <a
-                    href="https://discord.gg/4eeurUVvTy"
-                    className="hover:underline"
-                  >
-                    Discord
-                  </a>
+                <li className="mb-4">
+                  <Link to="#" className="hover:underline ">
+                    Facebook
+                  </Link>
+                </li>
+                <li className="mb-4">
+                  <Link to="#" className="hover:underline ">
+                    Twiter
+                  </Link>
                 </li>
               </ul>
             </div>
             <div className="lg:col-span-2 col-span-6 mt-5 lg:mt-0">
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Legal
+              <h2 className="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white">
+                Help
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <Link to="#" className="hover:underline ">
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
-                <li>
-                  <a href="#" className="hover:underline">
-                    Terms &amp; Conditions
-                  </a>
+                <li className="mb-4">
+                  <Link to="#" className="hover:underline ">
+                    Information
+                  </Link>
+                </li>
+                <li className="mb-4">
+                  <Link to="#" className="hover:underline ">
+                    Shipping Details
+                  </Link>
                 </li>
               </ul>
             </div>
             <div className="lg:col-span-2 col-span-6 mt-5 lg:mt-0">
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Legal
+              <h2 className="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white">
+                Quick Links
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
-                    Privacy Policy
-                  </a>
+                  <Link to="/" className="hover:underline">
+                    Home
+                  </Link>
                 </li>
-                <li>
-                  <a href="#" className="hover:underline">
-                    Terms &amp; Conditions
-                  </a>
+                <li className="mb-4">
+                  <Link to="#" className="hover:underline">
+                    Blogs
+                  </Link>
                 </li>
+                <li className="mb-4">
+                  <Link to="#" className="hover:underline">
+                    Shop
+                  </Link>
+                </li>
+                <li className="mb-4">
+                  <Link to="#" className="hover:underline">
+                    Contact Us
+                  </Link>
+                </li>
+              
               </ul>
             </div>
             {/* </div> */}

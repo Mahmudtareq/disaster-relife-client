@@ -2,7 +2,9 @@ import App from "@/App";
 import DashBoardLayout from "@/components/layouts/DashBoardLayout";
 import AllSupplyProducts from "@/pages/AllSupplyProducts";
 import CardDetailsPage from "@/pages/CardDetailsPage";
+import CreateSupplies from "@/pages/CreateSupplies";
 import DashboardHome from "@/pages/DashboardHome";
+import DashboardSupplies from "@/pages/DashboardSupplies";
 import Home from "@/pages/Home";
 import LoginPage from "@/pages/LoginPage";
 import RegisterPage from "@/pages/RegisterPage";
@@ -26,6 +28,8 @@ const router = createBrowserRouter([
     element: <DashBoardLayout />,
     children: [
       { index: true, element: <DashboardHome /> }, //index:true when hit / it's got to this page
+      { path: "/dashboard/supplies", element: <DashboardSupplies /> }, //index:true when hit / it's got to this page
+      { path: "/dashboard/create-supply", element: <CreateSupplies /> }, //index:true when hit / it's got to this page
     ],
   },
 ]);

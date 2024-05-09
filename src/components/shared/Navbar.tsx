@@ -24,7 +24,6 @@ const links = [
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  console.log(location.pathname);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

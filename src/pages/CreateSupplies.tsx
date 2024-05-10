@@ -16,7 +16,7 @@ const CreateSupplies = () => {
     // formState: { errors },
   } = useForm<Inputs>();
   // const dispatch = useAppDispatch();
-  const [addSupplies, { isLoading,isSuccess }] = useAddSuppliesMutation();
+  const [addSupplies] = useAddSuppliesMutation();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     // dispatch(addSupplies(data));
     addSupplies(data);

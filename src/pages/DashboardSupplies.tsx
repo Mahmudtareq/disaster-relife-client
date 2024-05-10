@@ -1,33 +1,66 @@
+import ProductUpdateForm from "@/components/ProductUpdateForm";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-// import { getSupplyData } from "@/data/supplydata";
-import { useGetSuppliesQuery } from "@/redux/api/api";
-// import { Supply } from "@/types/cardTypes";
+
+import {
+  useDeleteSupplyByIdMutation,
+  useGetSuppliesQuery,
+} from "@/redux/api/api";
+
 import { Edit2Icon, Trash2 } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 export type TItems = {
   _id: string;
   title: string;
   category: string;
-  price:string;
+  price: string;
 };
 
 const DashboardSupplies = () => {
-  // const [data, setData] = useState<Supply[]>([]);
-  // useEffect(() => {
-  //   // Function to get supply data synchronously
-  //   const supplyData: Supply[] = getSupplyData();
-  //   setData(supplyData);
-  // }, []);
-  // console.log(data);
   const { data, isLoading } = useGetSuppliesQuery(undefined);
+  const [deleteSupply] = useDeleteSupplyByIdMutation();
+  const [selectedSupply, setSelectedSupply] = useState(null);
+
+  const handleDelete = async (id: string) => {
+    try {
+      await deleteSupply(id);
+      console.log("Supply deleted successfully");
+    } catch (error) {
+      console.error("Failed to delete supply:", error);
+    }
+  };
+  const handleEdit = (supply) => {
+    setSelectedSupply(supply);
+  };
+
   if (isLoading) {
-    return <p>Loading...........</p>;
+    return (
+      <>
+        {" "}
+        <div className="flex items-center space-x-4 max-w-4xl mx-auto">
+          <Skeleton className="h-12 w-12 rounded-full" />
+          <div className="space-y-2">
+            <Skeleton className="h-4 w-[250px]" />
+            <Skeleton className="h-4 w-[200px]" />
+          </div>
+        </div>
+      </>
+    );
   }
   return (
     <div>
@@ -100,13 +133,38 @@ const DashboardSupplies = () => {
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger asChild>
-                            <Button
-                              variant="secondary"
-                              className="rounded-[8px]"
-                              size="icon"
-                            >
-                              <Edit2Icon className="h-4 w-4" />
-                            </Button>
+                            <Dialog>
+                              <DialogTrigger asChild>
+                                <Button
+                                  variant="secondary"
+                                  className="rounded-[8px]"
+                                  size="icon"
+                                  onClick={() => handleEdit(item)}
+                                >
+                                  <Edit2Icon className="h-4 w-4" />
+                                </Button>
+                              </DialogTrigger>
+                              <DialogContent className="sm:max-w-[425px]">
+                                <DialogHeader>
+                                  <DialogTitle>
+                                    Update Product Details
+                                  </DialogTitle>
+                                  <DialogDescription>
+                                    Make changes to your profile here. Click
+                                    save when you're done.
+                                  </DialogDescription>
+                                </DialogHeader>
+                                <div className="">
+                                  <ProductUpdateForm
+                                    supply={selectedSupply}
+                                    onClose={() => setSelectedSupply(null)}
+                                  />
+                                </div>
+                                {/* <DialogFooter>
+                                  <Button type="submit">Save changes</Button>
+                                </DialogFooter> */}
+                              </DialogContent>
+                            </Dialog>
                           </TooltipTrigger>
                           <TooltipContent>
                             <span>Edit</span>
@@ -120,6 +178,7 @@ const DashboardSupplies = () => {
                               variant="destructive"
                               className="rounded-[8px]"
                               size="icon"
+                              onClick={() => handleDelete(item._id)}
                             >
                               <Trash2 className="h-4 w-4" />
                             </Button>
@@ -129,6 +188,7 @@ const DashboardSupplies = () => {
                           </TooltipContent>
                         </Tooltip>
                       </TooltipProvider>
+
                       <Button>
                         <Link to="/dashboard/create-supply">Add Supply</Link>
                       </Button>

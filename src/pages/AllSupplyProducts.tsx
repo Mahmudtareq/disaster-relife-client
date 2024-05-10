@@ -1,15 +1,14 @@
 import AllProductsCard from "@/components/AllProductsCard";
-import { getSupplyData } from "@/data/supplydata";
+import { useGetSuppliesQuery } from "@/redux/api/api";
 import { Supply } from "@/types/cardTypes";
-import { useEffect, useState } from "react";
+
 
 const AllSupplyProducts = () => {
-  const [data, setData] = useState<Supply[]>([]);
-  useEffect(() => {
-    // Function to get supply data synchronously
-    const supplyData: Supply[] = getSupplyData();
-    setData(supplyData);
-  }, []);
+
+  const { data, isLoading } = useGetSuppliesQuery(undefined);
+  if (isLoading) {
+    return <p>Loading...........</p>;
+  }
   return (
     <div className="container mx-auto my-5">
       <div className="text-center my-4 lg:w-3/4 mx-auto">
@@ -21,8 +20,8 @@ const AllSupplyProducts = () => {
         </p>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
-        {data.map((item) => (
-          <AllProductsCard key={item.id} item={item} />
+        {data?.map((item:Supply) => (
+          <AllProductsCard key={item._id} item={item} />
         ))}
       </div>
     </div>

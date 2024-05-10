@@ -1,5 +1,5 @@
 export type Supply = {
-  id: number;
+  _id: number;
   image: string;
   title: string;
   price: number;

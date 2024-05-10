@@ -9,7 +9,6 @@ const CardDetailsPage = () => {
   const params = useParams<{ id?: string }>();
   const supplyData: Supply[] = getSupplyData();
   const [selectedItem, setSelectedItem] = useState<Supply | null>(null);
-
   useEffect(() => {
     const item = supplyData.find((item) => item.id === parseInt(params.id!));
     setSelectedItem(item || null);

@@ -1,19 +1,23 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import SupplyCard from "../SupplyCard";
-import { getSupplyData } from "@/data/supplydata";
+// import { getSupplyData } from "@/data/supplydata";
 import { Supply } from "@/types/cardTypes";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRightCircle } from "lucide-react";
+import { useGetSuppliesQuery } from "@/redux/api/api";
 
 const SupplyCardHome = () => {
-  const [data, setData] = useState<Supply[]>([]);
-  useEffect(() => {
-    // Function to get supply data synchronously
-    const supplyData: Supply[] = getSupplyData();
-    setData(supplyData);
-  }, []); // Empty dependency array to only run effect on mount
-
+  // const [data, setData] = useState<Supply[]>([]);
+  // useEffect(() => {
+  //   // Function to get supply data synchronously
+  //   const supplyData: Supply[] = getSupplyData();
+  //   setData(supplyData);
+  // }, []); // Empty dependency array to only run effect on mount
+  const { data, isLoading } = useGetSuppliesQuery(undefined);
+  if (isLoading) {
+    return <p>Loading..............</p>;
+  }
   return (
     <div className="my-10">
       <div className="lg:text-center text-justify  my-4 lg:w-3/4 mx-auto">
@@ -25,8 +29,8 @@ const SupplyCardHome = () => {
         </p>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
-        {data.slice(0, 6).map((item) => (
-          <SupplyCard key={item.id} item={item} />
+        {data.slice(0, 6).map((item: Supply) => (
+          <SupplyCard key={item._id} item={item} />
         ))}
       </div>
       <div className="my-10 text-center">

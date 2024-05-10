@@ -1,0 +1,72 @@
+[
+  {
+    "image": "image2",
+    "title": "Surgical Kit",
+    "price": 99.99,
+    "description": "The Surgical Kit is a comprehensive set of sterile instruments and tools essential for surgical procedures, including scalpels, forceps, scissors, and sutures. Designed for use in emergency situations or medical facilities lacking proper equipment, this kit ensures precise and safe surgical interventions. Each instrument is crafted from high-quality materials to meet medical standards, guaranteeing optimal performance and durability. With its organized layout and compact design, the Surgical Kit facilitates efficient surgical practices in challenging environments, providing healthcare professionals with the tools they need to save lives.",
+    "category": "Surgical Equipment"
+  },
+  {
+    "image": "image3",
+    "title": "Smart Mask",
+    "price": 29.99,
+    "description": "The Smart Mask revolutionizes respiratory protection with advanced features for enhanced safety and comfort. Equipped with built-in sensors and filtration technology, this innovative mask monitors air quality in real-time and adjusts airflow to ensure optimal breathing conditions. Its ergonomic design and adjustable straps offer a secure and personalized fit for users of all ages. The Smart Mask is compatible with mobile applications, allowing users to track their respiratory health and receive alerts for air pollution levels or filter replacements. Whether in urban areas or disaster zones, this smart solution provides reliable respiratory protection against airborne contaminants, promoting health and well-being.",
+    "category": "Personal Protective Equipment"
+  },
+  {
+    "image": "image4",
+    "title": "Digital Thermometer",
+    "price": 12.99,
+    "description": "The Digital Thermometer offers accurate and rapid temperature measurement for effective patient care. Featuring a digital display and easy-to-use design, this thermometer provides instant readings with high precision. Its flexible tip ensures gentle and comfortable use, suitable for all age groups, including infants and seniors. With a wide temperature range and memory function, healthcare professionals can monitor fever trends and track patient progress over time. Compact and portable, the Digital Thermometer is an essential tool for medical professionals, first responders, and caregivers in disaster situations, enabling prompt detection and management of febrile conditions.",
+    "category": "Diagnostic Equipment"
+  },
+  {
+    "image": "image5",
+    "title": "Emergency Water Purifier",
+    "price": 49.99,
+    "description": "The Emergency Water Purifier provides a reliable solution for obtaining safe drinking water during emergencies or natural disasters. Utilizing advanced filtration technology, this compact device removes harmful contaminants, bacteria, and viruses from untreated water sources, ensuring potable water for consumption. Its portable design and durable construction make it suitable for outdoor use and survival situations. With easy setup and operation, the Emergency Water Purifier requires no electricity or additional chemicals, offering an efficient and sustainable way to access clean water in critical situations.",
+    "category": "Emergency Preparedness"
+  },
+  {
+    "image": "image1",
+    "title": "Portable Oxygen Concentrator",
+    "price": 299.99,
+    "description": "The Portable Oxygen Concentrator is a lightweight and compact device designed to deliver supplemental oxygen to individuals with respiratory conditions. Featuring adjustable flow settings and long-lasting battery life, this portable unit provides continuous oxygen therapy for patients in need, promoting mobility and independence. Its quiet operation and user-friendly interface ensure comfort and ease of use, allowing patients to maintain an active lifestyle. With its portable design and travel-friendly accessories, the Portable Oxygen Concentrator is ideal for use at home, during travel, or in emergency situations, providing reliable respiratory support wherever it's needed.",
+    "category": "Respiratory Equipment"
+  },
+  {
+    "image": "image6",
+    "title": "Emergency Blanket",
+    "price": 7.99,
+    "description": "The Emergency Blanket is a versatile and lightweight solution for thermal insulation and protection in emergency situations. Constructed from durable and heat-reflective material, this blanket retains body heat and prevents hypothermia in cold environments. Its compact size and waterproof design make it suitable for outdoor activities, camping, and emergency shelters. The Emergency Blanket is also used for signaling distress and creating emergency shelters in survival scenarios. With its multifunctional design and affordability, it's an essential item for disaster preparedness kits, first aid supplies, and emergency response teams.",
+    "category": "Emergency Supplies"
+  },
+  {
+    "image": "image7",
+    "title": "Trauma Kit",
+    "price": 79.99,
+    "description": "The Trauma Kit is a specialized medical kit designed to provide critical care and treatment for traumatic injuries in emergency situations. Packed with essential supplies and equipment, including trauma dressings, tourniquets, and hemostatic agents, this kit enables immediate intervention to control bleeding and stabilize patients. Its organized layout and compact packaging allow for rapid deployment and easy access to life-saving tools. Whether used by first responders, medical professionals, or bystanders, the Trauma Kit is an indispensable resource for managing severe injuries and saving lives in disaster scenarios.",
+    "category": "Emergency Preparedness"
+  },
+  {
+    "image": "image1",
+    "title": "Hydration Packs",
+    "price": 24.99,
+    "description": "Hydration Packs are portable and convenient solutions for staying hydrated during outdoor activities, travel, and emergency situations. Consisting of a backpack or vest with an integrated hydration reservoir and drinking tube, these packs allow for hands-free hydration on the go. With various sizes and styles available, users can choose the pack that best suits their needs and preferences. Hydration Packs are ideal for hikers, cyclists, runners, and emergency responders who require continuous access to water without interrupting their activities. Lightweight, durable, and easy to use, they're essential equipment for maintaining hydration and performance in challenging environments.",
+    "category": "Outdoor Gear"
+  },
+  {
+    "image": "image5",
+    "title": "Emergency Flashlight",
+    "price": 14.99,
+    "description": "The Emergency Flashlight is a reliable source of illumination during power outages, natural disasters, and nighttime emergencies. Featuring a durable and water-resistant design, this flashlight provides bright LED lighting with multiple brightness settings and adjustable focus. Its compact size and ergonomic grip make it easy to carry and use in various situations. The Emergency Flashlight also includes additional features such as a built-in compass, SOS signaling, and rechargeable batteries, enhancing its utility for survival and rescue operations. Whether used for navigating dark environments or signaling for help, this versatile tool is an essential component of any emergency preparedness kit.",
+    "category": "Emergency Supplies"
+  },
+  {
+    "image": "image2",
+    "title": "Blood Pressure Monitor",
+    "price": 39.99,
+    "description": "The Blood Pressure Monitor is a portable and user-friendly device for measuring and monitoring blood pressure levels at home or in clinical settings. Equipped with automatic inflation and digital display, this monitor provides accurate readings of systolic and diastolic blood pressure, as well as heart rate. Its cuff design accommodates a wide range of arm sizes, ensuring comfort and reliability for users of all ages. With memory storage and data analysis features, the Blood Pressure Monitor allows for tracking and management of hypertension and cardiovascular health over time. Compact, lightweight, and easy to operate, it's an essential tool for proactive healthcare management and early detection of cardiovascular conditions.",
+    "category": "Diagnostic Equipment"
+  }
+]

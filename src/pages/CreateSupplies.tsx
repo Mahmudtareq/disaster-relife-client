@@ -1,8 +1,33 @@
+import { useAddSuppliesMutation } from "@/redux/api/api";
+// import { addSupplies } from "@/redux/features/suppliesSlice";
+// import { useAppDispatch } from "@/redux/hook";
+import { useForm, SubmitHandler } from "react-hook-form";
+export type Inputs = {
+  image: string;
+  category: string;
+  title: string;
+  price: number;
+  description: string;
+};
 const CreateSupplies = () => {
+  const {
+    register,
+    handleSubmit,
+    // formState: { errors },
+  } = useForm<Inputs>();
+  // const dispatch = useAppDispatch();
+  const [addSupplies, { isLoading,isSuccess }] = useAddSuppliesMutation();
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    // dispatch(addSupplies(data));
+    addSupplies(data);
+  };
   return (
     <div>
       <div>
-        <form className="lg:max-w-2xl w-full mx-auto">
+        <form
+          className="lg:max-w-2xl w-full mx-auto"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <div className="lg:flex w-full gap-4">
             <div className="mb-5 w-full lg:w-1/2">
               <label
@@ -16,7 +41,7 @@ const CreateSupplies = () => {
                 id="image"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="image url"
-                required
+                {...register("image", { required: true })}
               />
             </div>
             <div className="mb-5 w-full lg:w-1/2">
@@ -31,7 +56,7 @@ const CreateSupplies = () => {
                 id="category"
                 placeholder="add categories"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                required
+                {...register("category", { required: true })}
               />
             </div>
           </div>
@@ -48,7 +73,7 @@ const CreateSupplies = () => {
                 id="title"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Supply Title"
-                required
+                {...register("title", { required: true })}
               />
             </div>
             <div className="mb-5 w-full lg:w-1/2">
@@ -56,14 +81,14 @@ const CreateSupplies = () => {
                 htmlFor="amount"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Amount
+                Price
               </label>
               <input
                 type="number"
-                id="amount"
+                id="price"
                 placeholder="add Amount"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                required
+                {...register("price", { required: true })}
               />
             </div>
           </div>
@@ -79,6 +104,7 @@ const CreateSupplies = () => {
                 id="description"
                 className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Add Description..."
+                {...register("description", { required: true })}
               ></textarea>
             </div>
           </div>

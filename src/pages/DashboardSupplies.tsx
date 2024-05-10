@@ -5,20 +5,30 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { getSupplyData } from "@/data/supplydata";
-import { Supply } from "@/types/cardTypes";
+// import { getSupplyData } from "@/data/supplydata";
+import { useGetSuppliesQuery } from "@/redux/api/api";
+// import { Supply } from "@/types/cardTypes";
 import { Edit2Icon, Trash2 } from "lucide-react";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+export type TItems = {
+  _id: string;
+  title: string;
+  category: string;
+  price:string;
+};
 
 const DashboardSupplies = () => {
-  const [data, setData] = useState<Supply[]>([]);
-  useEffect(() => {
-    // Function to get supply data synchronously
-    const supplyData: Supply[] = getSupplyData();
-    setData(supplyData);
-  }, []);
-  console.log(data);
+  // const [data, setData] = useState<Supply[]>([]);
+  // useEffect(() => {
+  //   // Function to get supply data synchronously
+  //   const supplyData: Supply[] = getSupplyData();
+  //   setData(supplyData);
+  // }, []);
+  // console.log(data);
+  const { data, isLoading } = useGetSuppliesQuery(undefined);
+  if (isLoading) {
+    return <p>Loading...........</p>;
+  }
   return (
     <div>
       <div className="my-5">
@@ -58,15 +68,15 @@ const DashboardSupplies = () => {
               </tr>
             </thead>
             <tbody>
-              {data.map((item) => (
+              {data?.map((item: TItems) => (
                 <tr
-                  key={item.id}
+                  key={item._id}
                   className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                 >
                   <td className="w-4 p-4">
                     <div className="flex items-center">
                       <input
-                        id={`checkbox-table-search-${item.id}`}
+                        id={`checkbox-table-search-${item._id}`}
                         type="checkbox"
                         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                       />

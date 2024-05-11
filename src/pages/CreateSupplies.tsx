@@ -1,7 +1,8 @@
 import { useAddSuppliesMutation } from "@/redux/api/api";
-// import { addSupplies } from "@/redux/features/suppliesSlice";
-// import { useAppDispatch } from "@/redux/hook";
 import { useForm, SubmitHandler } from "react-hook-form";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+
 export type Inputs = {
   image: string;
   category: string;
@@ -15,11 +16,14 @@ const CreateSupplies = () => {
     handleSubmit,
     // formState: { errors },
   } = useForm<Inputs>();
+  const navigate = useNavigate();
   // const dispatch = useAppDispatch();
   const [addSupplies] = useAddSuppliesMutation();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     // dispatch(addSupplies(data));
     addSupplies(data);
+    toast.success("Supplies created successfully!");
+    navigate("/dashboard/supplies");
   };
   return (
     <div>

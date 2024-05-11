@@ -1,6 +1,6 @@
-import { useUpdateSupplyByIdMutation } from "@/redux/api/api";
-import { Supply } from "@/types/cardTypes";
-import { useForm, SubmitHandler } from "react-hook-form";
+// import { useUpdateSupplyByIdMutation } from "@/redux/api/api";
+// import { Supply } from "@/types/cardTypes";
+// import { useForm} from "react-hook-form";
 export type Inputs = {
   image: string;
   category: string;
@@ -8,32 +8,32 @@ export type Inputs = {
   price: number;
   description: string;
 };
-interface ProductUpdateFormProps {
-  supply: Inputs | null; // Assuming Supply is the type of your supply item
-  onClose: () => void;
-}
-const ProductUpdateForm = ({ supply, onClose }) => {
-  const {
-    register,
-    handleSubmit,
-    // formState: { errors },
-  } = useForm<Inputs>();
-  const [updateSupplyById] = useUpdateSupplyByIdMutation();
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    if (supply) {
-      updateSupplyById({ id: supply.id, data })
-        .then((updatedSupply) => {
-          console.log("Supply updated successfully:", updatedSupply);
-          onClose(); // Close the form after successful update
-        })
-        .catch((error) => {
-          console.error("Failed to update supply:", error);
-        });
-    }
-  };
+// interface ProductUpdateFormProps {
+//   supply: Inputs | null; // Assuming Supply is the type of your supply item
+//   onClose: () => void;
+// }
+const ProductUpdateForm = () => {
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   // formState: { errors },
+  // } = useForm<Inputs>();
+  // const [updateSupplyById] = useUpdateSupplyByIdMutation();
+  // const onSubmit: SubmitHandler<Inputs> = (data) => {
+  //   if (supply) {
+  //     updateSupplyById({ id: supply.id, data })
+  //       .then((updatedSupply) => {
+  //         console.log("Supply updated successfully:", updatedSupply);
+  //         onClose(); // Close the form after successful update
+  //       })
+  //       .catch((error) => {
+  //         console.error("Failed to update supply:", error);
+  //       });
+  //   }
+  // };
   return (
     <div>
-      <form
+      {/* <form
         className="lg:max-w-2xl w-full mx-auto"
         onSubmit={handleSubmit(onSubmit)}
       >
@@ -128,7 +128,7 @@ const ProductUpdateForm = ({ supply, onClose }) => {
         >
           Update
         </button>
-      </form>
+      </form> */}
     </div>
   );
 };

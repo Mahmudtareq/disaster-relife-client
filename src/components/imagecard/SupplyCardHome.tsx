@@ -29,7 +29,7 @@ const SupplyCardHome = () => {
         </p>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
-        {data.slice(0, 6).map((item: Supply) => (
+        {data?.slice(0, 6).map((item: Supply) => (
           <SupplyCard key={item._id} item={item} />
         ))}
       </div>

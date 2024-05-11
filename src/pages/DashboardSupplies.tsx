@@ -1,4 +1,4 @@
-import ProductUpdateForm from "@/components/ProductUpdateForm";
+// import ProductUpdateForm from "@/components/ProductUpdateForm";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -22,7 +22,9 @@ import {
 } from "@/redux/api/api";
 
 import { Edit2Icon, Trash2 } from "lucide-react";
-import { useState } from "react";
+import toast from "react-hot-toast";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// import { useState } from "react";
 import { Link } from "react-router-dom";
 export type TItems = {
   _id: string;
@@ -34,19 +36,19 @@ export type TItems = {
 const DashboardSupplies = () => {
   const { data, isLoading } = useGetSuppliesQuery(undefined);
   const [deleteSupply] = useDeleteSupplyByIdMutation();
-  const [selectedSupply, setSelectedSupply] = useState(null);
+  // const [selectedSupply, setSelectedSupply] = useState(null);
 
   const handleDelete = async (id: string) => {
     try {
       await deleteSupply(id);
-      console.log("Supply deleted successfully");
+      toast.success("Product deleted successfully!");
     } catch (error) {
       console.error("Failed to delete supply:", error);
     }
   };
-  const handleEdit = (supply) => {
-    setSelectedSupply(supply);
-  };
+  // const handleEdit = (supply: SetStateAction<null>) => {
+  //   setSelectedSupply(supply);
+  // };
 
   if (isLoading) {
     return (
@@ -139,7 +141,7 @@ const DashboardSupplies = () => {
                                   variant="secondary"
                                   className="rounded-[8px]"
                                   size="icon"
-                                  onClick={() => handleEdit(item)}
+                                  // onClick={() => handleEdit(item)}
                                 >
                                   <Edit2Icon className="h-4 w-4" />
                                 </Button>
@@ -155,10 +157,10 @@ const DashboardSupplies = () => {
                                   </DialogDescription>
                                 </DialogHeader>
                                 <div className="">
-                                  <ProductUpdateForm
+                                  {/* <ProductUpdateForm
                                     supply={selectedSupply}
                                     onClose={() => setSelectedSupply(null)}
-                                  />
+                                  /> */}
                                 </div>
                                 {/* <DialogFooter>
                                   <Button type="submit">Save changes</Button>

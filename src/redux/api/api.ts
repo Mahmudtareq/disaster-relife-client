@@ -3,7 +3,9 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 // Define a service using a base URL and expected endpoints
 export const baseApi = createApi({
   reducerPath: "baseApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000" }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://medical-supplies-liard.vercel.app/",
+  }),
   tagTypes: ["supplies"],
   endpoints: (builder) => ({
     getSupplies: builder.query({
@@ -46,4 +48,10 @@ export const baseApi = createApi({
   }),
 });
 
-export const { useGetSuppliesQuery, useAddSuppliesMutation,useGetSupplyByIdQuery,useDeleteSupplyByIdMutation ,useUpdateSupplyByIdMutation} = baseApi;
+export const {
+  useGetSuppliesQuery,
+  useAddSuppliesMutation,
+  useGetSupplyByIdQuery,
+  useDeleteSupplyByIdMutation,
+  useUpdateSupplyByIdMutation,
+} = baseApi;

@@ -48,7 +48,7 @@ const ProductUpdateForm = ({ supply, onClose }) => {
             <input
               type="text"
               id="image"
-              defaultValue={supply.image}
+              defaultValue={supply?.image}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="image url"
               {...register("image", { required: true })}
@@ -64,7 +64,7 @@ const ProductUpdateForm = ({ supply, onClose }) => {
             <input
               type="text"
               id="category"
-              defaultValue={supply.category}
+              defaultValue={supply?.category}
               placeholder="add categories"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               {...register("category", { required: true })}
@@ -82,7 +82,7 @@ const ProductUpdateForm = ({ supply, onClose }) => {
             <input
               type="text"
               id="title"
-              defaultValue={supply.title}
+              defaultValue={supply?.title}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Supply Title"
               {...register("title", { required: true })}
@@ -98,7 +98,7 @@ const ProductUpdateForm = ({ supply, onClose }) => {
             <input
               type="number"
               id="price"
-              defaultValue={supply.price}
+              defaultValue={supply?.price}
               placeholder="add Amount"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               {...register("price", { required: true })}
@@ -115,7 +115,7 @@ const ProductUpdateForm = ({ supply, onClose }) => {
             </label>
             <textarea
               id="description"
-              defaultValue={supply.description}
+              defaultValue={supply?.description}
               className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Add Description..."
               {...register("description", { required: true })}
